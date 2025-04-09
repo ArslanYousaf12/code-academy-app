@@ -1,6 +1,10 @@
+import 'package:code_academy_app/screens/welcome/bloc/welcome_blocs.dart';
+import 'package:code_academy_app/screens/welcome/bloc/welcome_events.dart';
 import 'package:code_academy_app/screens/welcome/welcome_page_component.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' hide StatefulWidget;
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,8 +24,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         margin: EdgeInsets.only(top: 34.h),
         width: 375.w,
         child: Stack(
+          alignment: Alignment.topCenter,
           children: [
             PageView(
+              onPageChanged: (value) {
+                context.read<WelcomeBlocs>().add(WelcomeEvents(page: value));
+              },
               children: [
                 WelcomePageComponent(
                   index: 1,
@@ -51,6 +59,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   imagePath: "Image Path",
                 ),
               ],
+            ),
+            Positioned(
+              bottom: 60.h,
+              child: DotsIndicator(
+                position: context.watch<WelcomeBlocs>().state.page.toDouble(),
+                dotsCount: 3,
+                mainAxisAlignment: MainAxisAlignment.center,
+                decorator: DotsDecorator(
+                  color: Colors.grey,
+                  activeColor: Colors.blue,
+                  size: const Size.square(8.0),
+                  activeSize: const Size(18.0, 8.0),
+                  activeShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

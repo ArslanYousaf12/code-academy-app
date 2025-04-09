@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AppBlocs(),
+      create: (context) => WelcomeBlocs(),
       child: ScreenUtilInit(
         builder: (context, child) {
           return MaterialApp(
