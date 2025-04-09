@@ -2,6 +2,7 @@ import 'package:code_academy_app/app_blocs.dart';
 import 'package:code_academy_app/app_events.dart';
 import 'package:code_academy_app/app_state.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_blocs.dart';
+import 'package:code_academy_app/screens/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
