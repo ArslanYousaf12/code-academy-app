@@ -1,3 +1,4 @@
+import 'package:code_academy_app/main.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_blocs.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_events.dart';
 import 'package:code_academy_app/screens/welcome/welcome_page_component.dart';
@@ -16,6 +17,23 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  PageController pageController = PageController(initialPage: 0);
+
+  void nextButtonClick(index) {
+    if (index < 3) {
+      pageController.animateToPage(
+        index,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.decelerate,
+      );
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MyHomePage()),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +45,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           alignment: Alignment.topCenter,
           children: [
             PageView(
+              controller: pageController,
               onPageChanged: (value) {
                 context.read<WelcomeBlocs>().add(WelcomeEvents(page: value));
               },
@@ -39,6 +58,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   subTitle:
                       "Forget about a for of paper all knowledge in one learning.",
                   imagePath: "assets/images/reading.png",
+                  onTab: (p0) {
+                    nextButtonClick(1);
+                  },
                 ),
                 WelcomePageComponent(
                   index: 2,
@@ -48,6 +70,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   subTitle:
                       "Always keep in touch with your tutor & friend. lets get connected.",
                   imagePath: "assets/images/boy.png",
+                  onTab: (p0) {
+                    nextButtonClick(2);
+                  },
                 ),
                 WelcomePageComponent(
                   index: 3,
@@ -57,6 +82,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   subTitle:
                       "Anywhere, anytime. The time is at your discretion so study whenever you want.",
                   imagePath: "assets/images/man.png",
+                  onTab: (p0) {
+                    nextButtonClick(3);
+                  },
                 ),
               ],
             ),
