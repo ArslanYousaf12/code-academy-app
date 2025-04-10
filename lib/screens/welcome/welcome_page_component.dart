@@ -23,7 +23,11 @@ class WelcomePageComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(width: 345.w, height: 345.h, child: Text("Image one")),
+        SizedBox(
+          width: 345.w,
+          height: 345.h,
+          child: Image.asset(imagePath, fit: BoxFit.cover),
+        ),
         Container(
           child: Text(
             title,

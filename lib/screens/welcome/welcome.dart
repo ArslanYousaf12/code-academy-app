@@ -38,7 +38,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   title: "First See Learning",
                   subTitle:
                       "Forget about a for of paper all knowledge in one learning.",
-                  imagePath: "Image Path",
+                  imagePath: "assets/images/reading.png",
                 ),
                 WelcomePageComponent(
                   index: 2,
@@ -47,7 +47,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   title: "Connect with Everyone",
                   subTitle:
                       "Always keep in touch with your tutor & friend. lets get connected.",
-                  imagePath: "Image Path",
+                  imagePath: "assets/images/boy.png",
                 ),
                 WelcomePageComponent(
                   index: 3,
@@ -56,7 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   title: "Always Fascinated Learning",
                   subTitle:
                       "Anywhere, anytime. The time is at your discretion so study whenever you want.",
-                  imagePath: "Image Path",
+                  imagePath: "assets/images/man.png",
                 ),
               ],
             ),
