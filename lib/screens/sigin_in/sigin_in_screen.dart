@@ -1,6 +1,7 @@
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_events.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sign_in_state.dart';
+import 'package:code_academy_app/screens/sigin_in/sigin_in_controller.dart';
 import 'package:code_academy_app/screens/sigin_in/widgets/sigin_in_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -66,8 +67,15 @@ class _SiginInScreenState extends State<SiginInScreen> {
                       ),
                     ),
                     forgotPassword(),
-                    buildLoginAndRegButton("Login", "login"),
-                    buildLoginAndRegButton("Register", "register"),
+                    buildLoginAndRegButton("Login", "login", () {
+                      debugPrint("Login button pressed");
+                      SiginInController(
+                        context: context,
+                      ).handleSiginIn("email");
+                    }),
+                    buildLoginAndRegButton("Register", "register", () {
+                      debugPrint("Register button pressed");
+                    }),
                   ],
                 ),
               ),

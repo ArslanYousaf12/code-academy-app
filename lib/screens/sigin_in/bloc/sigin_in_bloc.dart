@@ -6,11 +6,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class SiginInBloc extends Bloc<SiginInEvents, SignInState> {
   SiginInBloc() : super(SignInState()) {
     on<EmailEvent>((event, emit) {
-      debugPrint("Email: ${event.email}");
+      // debugPrint("Email: ${event.email}");
       emit(state.copyWith(email: event.email));
     });
     on<PasswordEvent>((event, emit) {
-      debugPrint("Password: ${event.password}");
+      // debugPrint("Password: ${event.password}");
       emit(state.copyWith(password: event.password));
     });
   }
