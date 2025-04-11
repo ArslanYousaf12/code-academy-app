@@ -27,10 +27,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         curve: Curves.decelerate,
       );
     } else {
-      Navigator.push(
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => MyHomePage()),
+      // );
+      Navigator.of(
         context,
-        MaterialPageRoute(builder: (context) => MyHomePage()),
-      );
+      ).pushNamedAndRemoveUntil("MyHomePage", (route) => false);
     }
   }
 

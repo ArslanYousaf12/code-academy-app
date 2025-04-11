@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => WelcomeBlocs()),
-        BlocProvider(create: (context) => AppBlocs()),
+        BlocProvider(lazy: false, create: (context) => AppBlocs()),
       ],
       child: ScreenUtilInit(
         builder: (context, child) {
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             ),
             home: const WelcomeScreen(),
+            routes: {"MyHomePage": (context) => const MyHomePage()},
           );
         },
       ),
