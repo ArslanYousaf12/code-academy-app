@@ -33,7 +33,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       // );
       Navigator.of(
         context,
-      ).pushNamedAndRemoveUntil("MyHomePage", (route) => false);
+      ).pushNamedAndRemoveUntil("siginIn", (route) => false);
     }
   }
 

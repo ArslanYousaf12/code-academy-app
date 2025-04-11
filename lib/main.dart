@@ -1,6 +1,7 @@
 import 'package:code_academy_app/app_blocs.dart';
 import 'package:code_academy_app/app_events.dart';
 import 'package:code_academy_app/app_state.dart';
+import 'package:code_academy_app/screens/sigin_in/sigin_in_screen.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_blocs.dart';
 import 'package:code_academy_app/screens/welcome/welcome.dart';
 import 'package:flutter/material.dart';
@@ -27,10 +28,16 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Flutter Demo',
             theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              appBarTheme: const AppBarTheme(
+                elevation: 0,
+                backgroundColor: Colors.white,
+              ),
             ),
             home: const WelcomeScreen(),
-            routes: {"MyHomePage": (context) => const MyHomePage()},
+            routes: {
+              "MyHomePage": (context) => const MyHomePage(),
+              "siginIn": (context) => const SiginInScreen(),
+            },
           );
         },
       ),
