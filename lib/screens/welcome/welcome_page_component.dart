@@ -1,3 +1,4 @@
+import 'package:code_academy_app/common/values/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -34,7 +35,7 @@ class WelcomePageComponent extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              color: Colors.black,
+              color: AppColors.primaryText,
               fontSize: 24.sp,
               fontWeight: FontWeight.normal,
             ),
@@ -46,7 +47,7 @@ class WelcomePageComponent extends StatelessWidget {
           child: Text(
             subTitle,
             style: TextStyle(
-              color: Colors.black.withOpacity(0.5),
+              color: AppColors.primarySecondaryElementText,
               fontSize: 14.sp,
               fontWeight: FontWeight.normal,
             ),
@@ -60,7 +61,7 @@ class WelcomePageComponent extends StatelessWidget {
             height: 50.h,
 
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: AppColors.primaryElement,
               borderRadius: BorderRadius.all(Radius.circular(15.w)),
               boxShadow: [
                 BoxShadow(

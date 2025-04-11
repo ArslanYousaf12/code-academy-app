@@ -1,3 +1,4 @@
+import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/main.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_blocs.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_events.dart';
@@ -98,8 +99,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 dotsCount: 3,
                 mainAxisAlignment: MainAxisAlignment.center,
                 decorator: DotsDecorator(
-                  color: Colors.grey,
-                  activeColor: Colors.blue,
+                  color: AppColors.primaryThreeElementText,
+                  activeColor: AppColors.primaryElement,
                   size: const Size.square(8.0),
                   activeSize: const Size(18.0, 8.0),
                   activeShape: RoundedRectangleBorder(
