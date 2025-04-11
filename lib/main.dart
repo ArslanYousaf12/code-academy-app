@@ -1,14 +1,20 @@
 import 'package:code_academy_app/app_blocs.dart';
 import 'package:code_academy_app/app_events.dart';
 import 'package:code_academy_app/app_state.dart';
+import 'package:code_academy_app/firebase_options.dart';
+import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
 import 'package:code_academy_app/screens/sigin_in/sigin_in_screen.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_blocs.dart';
 import 'package:code_academy_app/screens/welcome/welcome.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ScreenUtil.ensureScreenSize();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -22,6 +28,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => WelcomeBlocs()),
         BlocProvider(lazy: false, create: (context) => AppBlocs()),
+        BlocProvider(create: (context) => SiginInBloc()),
       ],
       child: ScreenUtilInit(
         builder: (context, child) {
