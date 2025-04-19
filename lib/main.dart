@@ -1,7 +1,9 @@
+import 'package:code_academy_app/app_bloc_providers.dart';
 import 'package:code_academy_app/app_blocs.dart';
 import 'package:code_academy_app/app_events.dart';
 import 'package:code_academy_app/app_state.dart';
 import 'package:code_academy_app/firebase_options.dart';
+import 'package:code_academy_app/screens/register/register.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
 import 'package:code_academy_app/screens/sigin_in/sigin_in_screen.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_blocs.dart';
@@ -25,15 +27,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => WelcomeBlocs()),
-        BlocProvider(lazy: false, create: (context) => AppBlocs()),
-        BlocProvider(create: (context) => SiginInBloc()),
-      ],
+      providers: AppBlocProviders.providers,
       child: ScreenUtilInit(
         builder: (context, child) {
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Code academy',
             theme: ThemeData(
               appBarTheme: const AppBarTheme(
                 elevation: 0,
@@ -44,6 +42,7 @@ class MyApp extends StatelessWidget {
             routes: {
               "MyHomePage": (context) => const MyHomePage(),
               "siginIn": (context) => const SiginInScreen(),
+              "register": (context) => const Register(),
             },
           );
         },
