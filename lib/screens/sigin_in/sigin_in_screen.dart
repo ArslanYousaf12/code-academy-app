@@ -25,7 +25,7 @@ class _SiginInScreenState extends State<SiginInScreen> {
           child: SafeArea(
             child: Scaffold(
               backgroundColor: Colors.white,
-              appBar: buildAppBar(),
+              appBar: buildAppBar("Login"),
               body: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,7 +74,7 @@ class _SiginInScreenState extends State<SiginInScreen> {
                         context: context,
                       ).handleSiginIn("email");
                     }),
-                    buildLoginAndRegButton("Register", "register", () {
+                    buildLoginAndRegButton("Sigin Up", "register", () {
                       Navigator.of(context).pushNamed("register");
                       debugPrint("Register button pressed");
                     }),
