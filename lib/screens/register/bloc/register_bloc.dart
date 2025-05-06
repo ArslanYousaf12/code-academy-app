@@ -9,7 +9,13 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterStates> {
     on<EmailChangedEvent>(_emailChangedEvent);
     on<PasswordChangedEvent>(_passwordChangedEvent);
     on<ConfirmPasswordChangedEvent>(_confirmPasswordChangedEvent);
+    on<LoadingEvent>(_loadingEvent);
   }
+  void _loadingEvent(LoadingEvent event, Emitter<RegisterStates> emit) {
+    final currentState = state as RegisterInitialState;
+    emit(currentState.copyWith(isLoading: event.isLoading));
+  }
+
   void _usernameChangedEvent(
     UsernameChangedEvent event,
     Emitter<RegisterStates> emit,

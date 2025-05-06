@@ -68,16 +68,28 @@ class _SiginInScreenState extends State<SiginInScreen> {
                       ),
                     ),
                     forgotPassword(),
-                    buildLoginAndRegButton("Login", "login", () {
-                      debugPrint("Login button pressed");
-                      SiginInController(
-                        context: context,
-                      ).handleSiginIn("email");
-                    }),
-                    buildLoginAndRegButton("Sigin Up", "register", () {
-                      Navigator.of(context).pushNamed("register");
-                      debugPrint("Register button pressed");
-                    }),
+                    buildLoginAndRegButton(
+                      "Login",
+                      "login",
+                      false,
+                      context,
+                      () {
+                        debugPrint("Login button pressed");
+                        SiginInController(
+                          context: context,
+                        ).handleSiginIn("email");
+                      },
+                    ),
+                    buildLoginAndRegButton(
+                      "Sigin Up",
+                      "register",
+                      false,
+                      context,
+                      () {
+                        Navigator.of(context).pushNamed("register");
+                        debugPrint("Register button pressed");
+                      },
+                    ),
                   ],
                 ),
               ),

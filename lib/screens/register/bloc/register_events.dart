@@ -19,3 +19,8 @@ class ConfirmPasswordChangedEvent extends RegisterEvent {
   final String confirmPassword;
   ConfirmPasswordChangedEvent(this.confirmPassword);
 }
+
+class LoadingEvent extends RegisterEvent {
+  final bool isLoading;
+  LoadingEvent(this.isLoading);
+}

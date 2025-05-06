@@ -2,6 +2,7 @@ import 'package:code_academy_app/screens/common_widget.dart';
 import 'package:code_academy_app/screens/register/bloc/register_bloc.dart';
 import 'package:code_academy_app/screens/register/bloc/register_events.dart';
 import 'package:code_academy_app/screens/register/bloc/register_states.dart';
+import 'package:code_academy_app/screens/register/register_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,6 +19,8 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return BlocBuilder<RegisterBloc, RegisterStates>(
       builder: (context, state) {
+        final registerState = state as RegisterInitialState;
+        final isLoading = registerState.isLoading;
         return Container(
           color: Colors.white,
           child: SafeArea(
@@ -97,10 +100,17 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
 
-                    buildLoginAndRegButton("Sign Up", "login", () {
-                      Navigator.of(context).pushNamed("register");
-                      debugPrint("Register button pressed");
-                    }),
+                    buildLoginAndRegButton(
+                      "Sign Up",
+                      "login",
+                      isLoading,
+                      context,
+                      () {
+                        RegisterController(context).handleEmailSignUp();
+
+                        debugPrint("Register button pressed");
+                      },
+                    ),
                   ],
                 ),
               ),

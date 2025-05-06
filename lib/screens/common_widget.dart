@@ -152,6 +152,8 @@ Widget forgotPassword() {
 Widget buildLoginAndRegButton(
   String buttonName,
   String buttonType,
+  bool isLoading,
+  BuildContext context,
   void Function()? fun,
 ) {
   return GestureDetector(
@@ -186,17 +188,20 @@ Widget buildLoginAndRegButton(
         ],
       ),
       child: Center(
-        child: Text(
-          buttonName,
-          style: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.normal,
-            color:
-                buttonType == "login"
-                    ? AppColors.primaryBackground
-                    : AppColors.primaryText,
-          ),
-        ),
+        child:
+            isLoading
+                ? CircularProgressIndicator(color: Colors.white)
+                : Text(
+                  buttonName,
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.normal,
+                    color:
+                        buttonType == "login"
+                            ? AppColors.primaryBackground
+                            : AppColors.primaryText,
+                  ),
+                ),
       ),
     ),
   );
