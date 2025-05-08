@@ -3,7 +3,7 @@ import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+asdjaskdasda asjdajd
 class SiginInController {
   SiginInController({required this.context});
   final BuildContext context;
