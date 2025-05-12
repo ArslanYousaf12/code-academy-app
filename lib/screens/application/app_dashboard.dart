@@ -1,3 +1,4 @@
+import 'package:code_academy_app/common/routes/pages.dart';
 import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/screens/application/app_widgets.dart';
 import 'package:flutter/material.dart';
