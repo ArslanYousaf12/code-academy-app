@@ -2,6 +2,7 @@ import 'package:code_academy_app/app_bloc_providers.dart';
 import 'package:code_academy_app/app_blocs.dart';
 import 'package:code_academy_app/app_events.dart';
 import 'package:code_academy_app/app_state.dart';
+import 'package:code_academy_app/common/routes/pages.dart';
 import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/firebase_options.dart';
 import 'package:code_academy_app/screens/application/app_dashboard.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: AppBlocProviders.providers,
+      providers: [...AppPages.getAllBlocs(context)],
       child: ScreenUtilInit(
         builder: (context, child) {
           return MaterialApp(
@@ -41,12 +42,8 @@ class MyApp extends StatelessWidget {
                 backgroundColor: Colors.white,
               ),
             ),
-            home: const AppDashboard(),
-            routes: {
-              // "MyHomePage": (context) => const MyHomePage(),
-              "siginIn": (context) => const SiginInScreen(),
-              "register": (context) => const Register(),
-            },
+            // home: const AppDashboard(),
+            onGenerateRoute: AppPages.generateRoute,
           );
         },
       ),

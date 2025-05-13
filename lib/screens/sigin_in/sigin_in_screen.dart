@@ -1,3 +1,4 @@
+import 'package:code_academy_app/common/routes/name.dart';
 import 'package:code_academy_app/screens/common_widget.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_events.dart';
@@ -86,7 +87,7 @@ class _SiginInScreenState extends State<SiginInScreen> {
                       false,
                       context,
                       () {
-                        Navigator.of(context).pushNamed("register");
+                        Navigator.of(context).pushNamed(AppRoutes.REGISTER);
                         debugPrint("Register button pressed");
                       },
                     ),

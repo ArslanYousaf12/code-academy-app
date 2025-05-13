@@ -1,3 +1,4 @@
+import 'package:code_academy_app/common/routes/name.dart';
 import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/main.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_blocs.dart';
@@ -28,13 +29,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         curve: Curves.decelerate,
       );
     } else {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => MyHomePage()),
-      // );
       Navigator.of(
         context,
-      ).pushNamedAndRemoveUntil("siginIn", (route) => false);
+      ).pushNamedAndRemoveUntil(AppRoutes.SIGIN_IN, (route) => false);
     }
   }
 
