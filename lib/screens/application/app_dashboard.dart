@@ -1,7 +1,10 @@
 import 'package:code_academy_app/common/routes/pages.dart';
 import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/screens/application/app_widgets.dart';
+import 'package:code_academy_app/screens/application/bloc/app_blocs.dart';
+import 'package:code_academy_app/screens/application/bloc/app_events.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppDashboard extends StatefulWidget {
@@ -39,9 +42,7 @@ class _AppDashboardState extends State<AppDashboard> {
             ),
             child: BottomNavigationBar(
               onTap: (value) {
-                setState(() {
-                  currentIndex = value;
-                });
+                context.read<AppBlocs>().add(TrigerAppEvents(value));
               },
               currentIndex: currentIndex,
               type: BottomNavigationBarType.fixed,

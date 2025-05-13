@@ -1,7 +1,5 @@
 import 'package:code_academy_app/app_bloc_providers.dart';
-import 'package:code_academy_app/app_blocs.dart';
-import 'package:code_academy_app/app_events.dart';
-import 'package:code_academy_app/app_state.dart';
+
 import 'package:code_academy_app/common/routes/pages.dart';
 import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/firebase_options.dart';

@@ -1,4 +1,6 @@
 import 'package:code_academy_app/common/routes/name.dart';
+import 'package:code_academy_app/screens/application/app_dashboard.dart';
+import 'package:code_academy_app/screens/application/bloc/app_blocs.dart';
 import 'package:code_academy_app/screens/register/bloc/register_bloc.dart';
 import 'package:code_academy_app/screens/register/register.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
@@ -28,8 +30,8 @@ class AppPages {
     ),
     PageEntity(
       route: AppRoutes.APPLICATION,
-      page: const SiginInScreen(),
-      bloc: BlocProvider(create: (_) => SiginInBloc()),
+      page: const AppDashboard(),
+      bloc: BlocProvider(create: (_) => AppBlocs()),
     ),
   ];
   static List<dynamic> getAllBlocs(BuildContext context) {

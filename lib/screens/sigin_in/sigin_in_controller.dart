@@ -1,3 +1,4 @@
+import 'package:code_academy_app/common/routes/routes.dart';
 import 'package:code_academy_app/common/widgets/flutter_toast.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -47,6 +48,11 @@ class SiginInController {
           if (user != null) {
             // We got verified user from firebase
             debugPrint("User is verified");
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.APPLICATION,
+              (route) => false,
+            );
             toastInfo(msg: "User is verified");
           } else {
             // We have error getting user from firebase
