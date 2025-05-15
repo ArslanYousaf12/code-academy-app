@@ -1,4 +1,6 @@
 import 'package:code_academy_app/common/routes/name.dart';
+import 'package:code_academy_app/common/values/constants.dart';
+import 'package:code_academy_app/global.dart';
 import 'package:code_academy_app/screens/application/app_dashboard.dart';
 import 'package:code_academy_app/screens/application/bloc/app_blocs.dart';
 import 'package:code_academy_app/screens/register/bloc/register_bloc.dart';
@@ -43,6 +45,23 @@ class AppPages {
     if (settings.name != null) {
       final page = pages().firstWhere((page) => page.route == settings.name);
       print("Page: ${page.page}");
+      bool? isUserFirstTime = Global.storageService.getbool(
+        AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME,
+      );
+      if (page.route == AppRoutes.INITIAL && isUserFirstTime == true) {
+        return MaterialPageRoute(
+          builder: (context) => const SiginInScreen(),
+          settings: settings,
+          // maintainState: true,
+        );
+      }
+      if (page.route == AppRoutes.SIGIN_IN && isUserFirstTime == false) {
+        return MaterialPageRoute(
+          builder: (context) => const WelcomeScreen(),
+          settings: settings,
+          // maintainState: true,
+        );
+      }
       return MaterialPageRoute(
         builder: (context) => page.page,
         settings: settings,
