@@ -1,5 +1,7 @@
 import 'package:code_academy_app/common/routes/name.dart';
 import 'package:code_academy_app/common/values/colors.dart';
+import 'package:code_academy_app/common/values/constants.dart';
+import 'package:code_academy_app/global.dart';
 import 'package:code_academy_app/main.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_blocs.dart';
 import 'package:code_academy_app/screens/welcome/bloc/welcome_events.dart';
@@ -29,6 +31,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         curve: Curves.decelerate,
       );
     } else {
+      Global.storageService.setbool(
+        AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME,
+        true,
+      );
       Navigator.of(
         context,
       ).pushNamedAndRemoveUntil(AppRoutes.SIGIN_IN, (route) => false);

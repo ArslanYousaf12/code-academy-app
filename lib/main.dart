@@ -3,6 +3,7 @@ import 'package:code_academy_app/app_bloc_providers.dart';
 import 'package:code_academy_app/common/routes/pages.dart';
 import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/firebase_options.dart';
+import 'package:code_academy_app/global.dart';
 import 'package:code_academy_app/screens/application/app_dashboard.dart';
 import 'package:code_academy_app/screens/register/register.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
@@ -15,9 +16,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await ScreenUtil.ensureScreenSize();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Global.init();
   runApp(const MyApp());
 }
 
