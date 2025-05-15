@@ -15,9 +15,9 @@ class AppDashboard extends StatefulWidget {
 }
 
 class _AppDashboardState extends State<AppDashboard> {
-  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    int currentIndex = context.watch<AppBlocs>().state.index;
     return Container(
       child: SafeArea(
         child: Scaffold(
@@ -52,22 +52,7 @@ class _AppDashboardState extends State<AppDashboard> {
               unselectedItemColor: AppColors.primaryFourElementText,
               selectedItemColor: AppColors.primaryElement,
 
-              items: [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.search),
-                  label: "Search",
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.book),
-                  label: "Courses",
-                ),
-                BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chat"),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  label: "Profile",
-                ),
-              ],
+              items: bottomTabs,
             ),
           ),
         ),

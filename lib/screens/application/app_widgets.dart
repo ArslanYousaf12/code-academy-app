@@ -10,3 +10,11 @@ Widget buildPage(int index) {
   ];
   return widgets[index];
 }
+
+var bottomTabs = [
+  BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+  BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+  BottomNavigationBarItem(icon: Icon(Icons.book), label: "Courses"),
+  BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chat"),
+  BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+];
