@@ -48,6 +48,14 @@ class AppPages {
       bool? isUserFirstTime = Global.storageService.getbool(
         AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME,
       );
+      bool isLogedin = Global.storageService.isLogedIn();
+      if (isLogedin == true) {
+        return MaterialPageRoute(
+          builder: (context) => const AppDashboard(),
+          settings: settings,
+          // maintainState: true,
+        );
+      }
       if (page.route == AppRoutes.INITIAL && isUserFirstTime == true) {
         return MaterialPageRoute(
           builder: (context) => const SiginInScreen(),
