@@ -13,6 +13,7 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.white,
       title: Container(
         margin: EdgeInsets.only(left: 16.w, right: 16.w),
         child: Row(
