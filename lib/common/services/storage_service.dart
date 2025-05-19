@@ -1,3 +1,4 @@
+import 'package:code_academy_app/common/values/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageService {
@@ -14,5 +15,17 @@ class StorageService {
 
   bool? getbool(String key) {
     return _prefs.getBool(key);
+  }
+
+  Future<bool> setString(String key, String value) async {
+    return await _prefs.setString(key, value);
+  }
+
+  String? getString(String key) {
+    return _prefs.getString(key);
+  }
+
+  bool isLogedIn() {
+    return _prefs.getString(AppConstants.USER_TOKEN_KEY) == null ? false : true;
   }
 }

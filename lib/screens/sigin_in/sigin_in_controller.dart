@@ -1,5 +1,7 @@
 import 'package:code_academy_app/common/routes/routes.dart';
+import 'package:code_academy_app/common/values/constants.dart';
 import 'package:code_academy_app/common/widgets/flutter_toast.dart';
+import 'package:code_academy_app/global.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -48,6 +50,10 @@ class SiginInController {
           if (user != null) {
             // We got verified user from firebase
             debugPrint("User is verified");
+            Global.storageService.setString(
+              AppConstants.USER_TOKEN_KEY,
+              user.uid,
+            );
             Navigator.pushNamedAndRemoveUntil(
               context,
               AppRoutes.APPLICATION,
