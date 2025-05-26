@@ -68,7 +68,9 @@ class _SiginInScreenState extends State<SiginInScreen> {
                         ],
                       ),
                     ),
+
                     forgotPassword(),
+                    SizedBox(height: 70.h),
                     buildLoginAndRegButton(
                       "Login",
                       "login",

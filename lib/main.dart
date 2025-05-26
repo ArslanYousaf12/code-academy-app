@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [...AppPages.getAllBlocs(context)],
       child: ScreenUtilInit(
+        designSize: const Size(375, 812),
         builder: (context, child) {
           return MaterialApp(
             title: 'Code academy',

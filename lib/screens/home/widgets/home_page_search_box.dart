@@ -65,16 +65,17 @@ class HomePageSearchBox extends StatelessWidget {
             ],
           ),
         ),
+
         GestureDetector(
           child: Container(
             width: 40.w,
             height: 40.h,
             decoration: BoxDecoration(
-              color: AppColors.primaryBackground,
+              color: AppColors.primaryElement,
               borderRadius: BorderRadius.circular(15.r),
-              border: Border.all(color: AppColors.primaryFourElementText),
+              border: Border.all(color: AppColors.primaryElement),
             ),
-            child: Center(child: Image.asset("assets/icons/filter.png")),
+            child: Center(child: Image.asset("assets/icons/options.png")),
           ),
         ),
       ],
