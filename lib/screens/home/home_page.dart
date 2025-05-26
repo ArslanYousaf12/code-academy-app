@@ -1,5 +1,6 @@
 import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/screens/home/widgets/home_page_app_bar.dart';
+import 'package:code_academy_app/screens/home/widgets/home_page_slider_view.dart';
 import 'package:code_academy_app/screens/home/widgets/home_page_search_box.dart';
 import 'package:code_academy_app/screens/home/widgets/home_page_text_widget.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,8 @@ class _HomePageState extends State<HomePage> {
               HomePageTextWidget(text: "Arslan", topMargin: 5),
               SizedBox(height: 20.h),
               HomePageSearchBox(),
+              SizedBox(height: 20.h),
+              HomePageSliderView(),
             ],
           ),
         ),
