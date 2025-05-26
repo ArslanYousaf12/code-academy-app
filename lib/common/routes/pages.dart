@@ -3,6 +3,8 @@ import 'package:code_academy_app/common/values/constants.dart';
 import 'package:code_academy_app/global.dart';
 import 'package:code_academy_app/screens/application/app_dashboard.dart';
 import 'package:code_academy_app/screens/application/bloc/app_blocs.dart';
+import 'package:code_academy_app/screens/home/bloc/home_page_bloc.dart';
+import 'package:code_academy_app/screens/home/home_page.dart';
 import 'package:code_academy_app/screens/register/bloc/register_bloc.dart';
 import 'package:code_academy_app/screens/register/register.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
@@ -34,6 +36,11 @@ class AppPages {
       route: AppRoutes.APPLICATION,
       page: const AppDashboard(),
       bloc: BlocProvider(create: (_) => AppBlocs()),
+    ),
+    PageEntity(
+      route: AppRoutes.Home_PAGE,
+      page: const HomePage(),
+      bloc: BlocProvider(create: (_) => HomePageBloc()),
     ),
   ];
   static List<dynamic> getAllBlocs(BuildContext context) {

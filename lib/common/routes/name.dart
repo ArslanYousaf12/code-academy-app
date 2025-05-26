@@ -5,4 +5,5 @@ class AppRoutes {
   static const String SIGIN_IN = '/sigin_in';
   static const String REGISTER = '/register';
   static const String APPLICATION = '/application';
+  static const String Home_PAGE = '/home_page';
 }
