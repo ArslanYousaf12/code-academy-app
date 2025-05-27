@@ -2,7 +2,7 @@ import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/screens/home/bloc/home_page_bloc.dart';
 import 'package:code_academy_app/screens/home/bloc/home_page_events.dart';
 import 'package:code_academy_app/screens/home/bloc/home_page_states.dart';
-import 'package:code_academy_app/screens/home/widgets/slider_widget.dart';
+import 'package:code_academy_app/screens/home/widgets/slider_widgets/slider_widget.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +13,7 @@ class HomePageSliderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int slider_index = context.watch<HomePageBloc>().state.index;
+    int sliderIndex = context.watch<HomePageBloc>().state.index;
     return Column(
       children: [
         Container(
@@ -33,7 +33,7 @@ class HomePageSliderView extends StatelessWidget {
         Container(
           child: DotsIndicator(
             dotsCount: 3,
-            position: slider_index.toDouble(),
+            position: sliderIndex.toDouble(),
             decorator: DotsDecorator(
               color: AppColors.primaryThreeElementText,
               activeColor: AppColors.primaryElement,
