@@ -24,19 +24,52 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 0, horizontal: 27.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HomePageTextWidget(
-                text: "Hello",
-                color: AppColors.primaryThreeElementText,
+          child: CustomScrollView(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            slivers: [
+              SliverToBoxAdapter(
+                child: HomePageTextWidget(
+                  text: "Hello",
+                  color: AppColors.primaryThreeElementText,
+                ),
               ),
-              HomePageTextWidget(text: "Arslan", topMargin: 5),
-              SizedBox(height: 20.h),
-              HomePageSearchBox(),
-              SizedBox(height: 20.h),
-              HomePageSliderView(),
-              MenuViewHomePage(),
+              SliverToBoxAdapter(
+                child: HomePageTextWidget(text: "Arslan", topMargin: 5),
+              ),
+              SliverPadding(padding: EdgeInsets.only(top: 20.h)),
+              SliverToBoxAdapter(child: HomePageSearchBox()),
+              SliverPadding(padding: EdgeInsets.only(top: 20.h)),
+              SliverToBoxAdapter(child: HomePageSliderView()),
+              SliverToBoxAdapter(child: MenuViewHomePage()),
+              SliverPadding(
+                padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 0.w),
+                sliver: SliverGrid(
+                  delegate: SliverChildBuilderDelegate(childCount: 4, (
+                    context,
+                    index,
+                  ) {
+                    return GestureDetector(
+                      //TODO: Add functionality to the grid items
+                      onTap: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/icons/Image(1).png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 15,
+                    crossAxisSpacing: 15,
+                    childAspectRatio: 1.6,
+                    // Adjust the aspect ratio as needed
+                  ),
+                ),
+              ),
             ],
           ),
         ),
