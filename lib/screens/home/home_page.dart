@@ -1,4 +1,5 @@
 import 'package:code_academy_app/common/values/colors.dart';
+import 'package:code_academy_app/screens/home/widgets/course_grid_home_page.dart';
 import 'package:code_academy_app/screens/home/widgets/home_page_app_bar.dart';
 import 'package:code_academy_app/screens/home/widgets/slider_widgets/home_page_slider_view.dart';
 import 'package:code_academy_app/screens/home/widgets/home_page_search_box.dart';
@@ -51,14 +52,7 @@ class _HomePageState extends State<HomePage> {
                     return GestureDetector(
                       //TODO: Add functionality to the grid items
                       onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage("assets/icons/Image(1).png"),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
+                      child: CourseGridHomePage(),
                     );
                   }),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
