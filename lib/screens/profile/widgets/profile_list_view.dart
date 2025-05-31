@@ -1,3 +1,4 @@
+import 'package:code_academy_app/common/routes/routes.dart';
 import 'package:code_academy_app/common/values/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +19,20 @@ class ProfileListView extends StatelessWidget {
     return Column(
       children: [
         ...List.generate(imageInfo.length, (index) {
+          String itemKey = imageInfo.keys.elementAt(index);
           return GestureDetector(
+            onTap: () {
+              // Navigate based on the specific item
+              if (itemKey.toLowerCase() == "settings") {
+                Navigator.of(context).pushNamed(AppRoutes.PROFILE_SETTINGS);
+              } else {
+                // For other items, you can add their routes here
+                // or show a message that the feature is coming soon
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('$itemKey feature coming soon!')),
+                );
+              }
+            },
             child: Container(
               margin: EdgeInsets.only(bottom: 20.h),
               child: Row(
@@ -39,7 +53,7 @@ class ProfileListView extends StatelessWidget {
                   ),
                   SizedBox(width: 10.w),
                   Text(
-                    imageInfo.keys.elementAt(index),
+                    itemKey,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,

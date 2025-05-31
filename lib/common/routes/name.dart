@@ -6,4 +6,6 @@ class AppRoutes {
   static const String REGISTER = '/register';
   static const String APPLICATION = '/application';
   static const String Home_PAGE = '/home_page';
+
+  static const String PROFILE_SETTINGS = '/settings';
 }
