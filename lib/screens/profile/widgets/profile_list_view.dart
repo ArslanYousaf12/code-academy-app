@@ -8,7 +8,9 @@ class ProfileListView extends StatelessWidget {
   final imageInfo = const <String, String>{
     "settings": "settings.png",
     "Payment Details": "credit-card.png",
-    "Love": "award.png",
+    "Achievement": "award.png",
+    "Love": "heart(1).png",
+    "Reminders": "cube.png",
   };
 
   @override
