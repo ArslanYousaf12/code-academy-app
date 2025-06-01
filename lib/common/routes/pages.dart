@@ -3,6 +3,10 @@ import 'package:code_academy_app/common/values/constants.dart';
 import 'package:code_academy_app/global.dart';
 import 'package:code_academy_app/screens/application/app_dashboard.dart';
 import 'package:code_academy_app/screens/application/bloc/app_blocs.dart';
+import 'package:code_academy_app/screens/home/bloc/home_page_bloc.dart';
+import 'package:code_academy_app/screens/home/home_page.dart';
+import 'package:code_academy_app/screens/profile/settings/bloc/setting_bloc.dart';
+import 'package:code_academy_app/screens/profile/settings/settings_page.dart';
 import 'package:code_academy_app/screens/register/bloc/register_bloc.dart';
 import 'package:code_academy_app/screens/register/register.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
@@ -35,6 +39,16 @@ class AppPages {
       page: const AppDashboard(),
       bloc: BlocProvider(create: (_) => AppBlocs()),
     ),
+    PageEntity(
+      route: AppRoutes.Home_PAGE,
+      page: const HomePage(),
+      bloc: BlocProvider(create: (_) => HomePageBloc()),
+    ),
+    PageEntity(
+      route: AppRoutes.PROFILE_SETTINGS,
+      page: const SettingsPage(),
+      bloc: BlocProvider(create: (_) => SettingBloc()),
+    ),
   ];
   static List<dynamic> getAllBlocs(BuildContext context) {
     return pages().map((page) => page.bloc).toList();
@@ -49,37 +63,35 @@ class AppPages {
         AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME,
       );
       bool isLogedin = Global.storageService.isLogedIn();
-      if (isLogedin == true) {
+      
+      // Only redirect to AppDashboard for the initial route when logged in
+      if (isLogedin == true && settings.name == AppRoutes.INITIAL) {
         return MaterialPageRoute(
           builder: (context) => const AppDashboard(),
           settings: settings,
-          // maintainState: true,
         );
       }
+      
       if (page.route == AppRoutes.INITIAL && isUserFirstTime == true) {
         return MaterialPageRoute(
           builder: (context) => const SiginInScreen(),
           settings: settings,
-          // maintainState: true,
         );
       }
       if (page.route == AppRoutes.SIGIN_IN && isUserFirstTime == false) {
         return MaterialPageRoute(
           builder: (context) => const WelcomeScreen(),
           settings: settings,
-          // maintainState: true,
         );
       }
       return MaterialPageRoute(
         builder: (context) => page.page,
         settings: settings,
-        // maintainState: true,
       );
     }
     return MaterialPageRoute(
       builder: (context) => const SiginInScreen(),
       settings: settings,
-      // maintainState: true,
     );
   }
 }
