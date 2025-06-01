@@ -49,10 +49,7 @@ class _FavoritesPageState extends State<FavoritesPage>
                 fontSize: 16.sp,
                 fontWeight: FontWeight.normal,
               ),
-              tabs: [
-                Tab(text: 'Courses'),
-                Tab(text: 'Instructors'),
-              ],
+              tabs: [Tab(text: 'Courses'), Tab(text: 'Instructors')],
             ),
             Expanded(
               child: TabBarView(

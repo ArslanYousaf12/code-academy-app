@@ -37,11 +37,7 @@ class AchievementAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             );
           },
-          icon: Icon(
-            Icons.share,
-            color: AppColors.primaryElement,
-            size: 24.w,
-          ),
+          icon: Icon(Icons.share, color: AppColors.primaryElement, size: 24.w),
         ),
       ],
     );

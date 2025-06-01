@@ -54,9 +54,12 @@ class PaymentMethods extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15.r),
                     border: Border.all(
-                      color: method['isDefault']
-                          ? AppColors.primaryElement
-                          : AppColors.primaryFourElementText.withOpacity(0.3),
+                      color:
+                          method['isDefault']
+                              ? AppColors.primaryElement
+                              : AppColors.primaryFourElementText.withOpacity(
+                                0.3,
+                              ),
                       width: method['isDefault'] ? 2 : 1,
                     ),
                     boxShadow: [
@@ -109,7 +112,10 @@ class PaymentMethods extends StatelessWidget {
                       ),
                       if (method['isDefault'])
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 4.h,
+                          ),
                           decoration: BoxDecoration(
                             color: AppColors.primaryElement,
                             borderRadius: BorderRadius.circular(12.r),

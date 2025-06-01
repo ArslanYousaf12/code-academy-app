@@ -57,18 +57,9 @@ class AppPages {
       route: AppRoutes.PAYMENT_DETAILS,
       page: const PaymentDetailsPage(),
     ),
-    PageEntity(
-      route: AppRoutes.ACHIEVEMENT,
-      page: const AchievementPage(),
-    ),
-    PageEntity(
-      route: AppRoutes.FAVORITES,
-      page: const FavoritesPage(),
-    ),
-    PageEntity(
-      route: AppRoutes.REMINDERS,
-      page: const RemindersPage(),
-    ),
+    PageEntity(route: AppRoutes.ACHIEVEMENT, page: const AchievementPage()),
+    PageEntity(route: AppRoutes.FAVORITES, page: const FavoritesPage()),
+    PageEntity(route: AppRoutes.REMINDERS, page: const RemindersPage()),
   ];
   static List<BlocProvider> getAllBlocs(BuildContext context) {
     return pages()
@@ -87,7 +78,7 @@ class AppPages {
         AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME,
       );
       bool isLogedin = Global.storageService.isLogedIn();
-      
+
       // Only redirect to AppDashboard for the initial route when logged in
       if (isLogedin == true && settings.name == AppRoutes.INITIAL) {
         return MaterialPageRoute(
@@ -95,7 +86,7 @@ class AppPages {
           settings: settings,
         );
       }
-      
+
       if (page.route == AppRoutes.INITIAL && isUserFirstTime == true) {
         return MaterialPageRoute(
           builder: (context) => const SiginInScreen(),

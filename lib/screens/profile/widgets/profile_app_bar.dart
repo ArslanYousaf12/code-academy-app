@@ -63,30 +63,20 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
                   borderRadius: BorderRadius.circular(2.r),
                 ),
               ),
-              _buildOptionItem(
-                context,
-                Icons.edit,
-                'Edit Profile',
-                () {
-                  Navigator.pop(context);
-                  // TODO: Navigate to edit profile screen
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Edit Profile feature coming soon!')),
-                  );
-                },
-              ),
-              _buildOptionItem(
-                context,
-                Icons.share,
-                'Share Profile',
-                () {
-                  Navigator.pop(context);
-                  // TODO: Implement share functionality
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Share Profile feature coming soon!')),
-                  );
-                },
-              ),
+              _buildOptionItem(context, Icons.edit, 'Edit Profile', () {
+                Navigator.pop(context);
+                // TODO: Navigate to edit profile screen
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Edit Profile feature coming soon!')),
+                );
+              }),
+              _buildOptionItem(context, Icons.share, 'Share Profile', () {
+                Navigator.pop(context);
+                // TODO: Implement share functionality
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Share Profile feature coming soon!')),
+                );
+              }),
               _buildOptionItem(
                 context,
                 Icons.privacy_tip_outlined,
@@ -95,7 +85,9 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
                   Navigator.pop(context);
                   // TODO: Navigate to privacy settings
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Privacy Settings feature coming soon!')),
+                    SnackBar(
+                      content: Text('Privacy Settings feature coming soon!'),
+                    ),
                   );
                 },
               ),
@@ -107,7 +99,9 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
                   Navigator.pop(context);
                   // TODO: Navigate to help screen
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Help & Support feature coming soon!')),
+                    SnackBar(
+                      content: Text('Help & Support feature coming soon!'),
+                    ),
                   );
                 },
               ),
@@ -118,13 +112,14 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  Widget _buildOptionItem(BuildContext context, IconData icon, String title, VoidCallback onTap) {
+  Widget _buildOptionItem(
+    BuildContext context,
+    IconData icon,
+    String title,
+    VoidCallback onTap,
+  ) {
     return ListTile(
-      leading: Icon(
-        icon,
-        color: AppColors.primaryElement,
-        size: 24.w,
-      ),
+      leading: Icon(icon, color: AppColors.primaryElement, size: 24.w),
       title: Text(
         title,
         style: TextStyle(
@@ -134,9 +129,7 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       onTap: onTap,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.r),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.r)),
     );
   }
 

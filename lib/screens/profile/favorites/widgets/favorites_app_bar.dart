@@ -37,11 +37,7 @@ class FavoritesAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             );
           },
-          icon: Icon(
-            Icons.search,
-            color: AppColors.primaryText,
-            size: 24.w,
-          ),
+          icon: Icon(Icons.search, color: AppColors.primaryText, size: 24.w),
         ),
       ],
     );

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FavoritesList extends StatelessWidget {
   final String type;
-  
+
   const FavoritesList({super.key, required this.type});
 
   final List<Map<String, dynamic>> favoriteCourses = const [
@@ -64,7 +64,7 @@ class FavoritesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final data = type == 'courses' ? favoriteCourses : favoriteInstructors;
-    
+
     if (data.isEmpty) {
       return Center(
         child: Column(
@@ -148,7 +148,9 @@ class FavoritesList extends StatelessWidget {
                       ),
                       SizedBox(height: 5.h),
                       Text(
-                        type == 'courses' ? item['instructor'] : item['specialty'],
+                        type == 'courses'
+                            ? item['instructor']
+                            : item['specialty'],
                         style: TextStyle(
                           color: AppColors.primarySecondaryElementText,
                           fontSize: 14.sp,
@@ -169,7 +171,9 @@ class FavoritesList extends StatelessWidget {
                           ),
                           SizedBox(width: 8.w),
                           Text(
-                            type == 'courses' ? '(${item['students']})' : item['students'],
+                            type == 'courses'
+                                ? '(${item['students']})'
+                                : item['students'],
                             style: TextStyle(
                               color: AppColors.primarySecondaryElementText,
                               fontSize: 12.sp,
@@ -203,11 +207,7 @@ class FavoritesList extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                    size: 24.w,
-                  ),
+                  icon: Icon(Icons.favorite, color: Colors.red, size: 24.w),
                 ),
               ],
             ),

@@ -53,11 +53,7 @@ class CourseStats extends StatelessWidget {
   Widget _buildStatItem(String value, String label, IconData icon) {
     return Column(
       children: [
-        Icon(
-          icon,
-          color: Colors.white,
-          size: 24.w,
-        ),
+        Icon(icon, color: Colors.white, size: 24.w),
         SizedBox(height: 8.h),
         Text(
           value,

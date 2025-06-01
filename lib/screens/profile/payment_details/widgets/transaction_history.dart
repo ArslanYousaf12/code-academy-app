@@ -110,9 +110,10 @@ class TransactionHistory extends StatelessWidget {
                           Text(
                             transaction['amount'],
                             style: TextStyle(
-                              color: transaction['type'] == 'refund'
-                                  ? Colors.green
-                                  : AppColors.primaryElement,
+                              color:
+                                  transaction['type'] == 'refund'
+                                      ? Colors.green
+                                      : AppColors.primaryElement,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.bold,
                             ),
@@ -131,9 +132,14 @@ class TransactionHistory extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 12.w,
+                              vertical: 4.h,
+                            ),
                             decoration: BoxDecoration(
-                              color: _getStatusColor(transaction['status']).withOpacity(0.1),
+                              color: _getStatusColor(
+                                transaction['status'],
+                              ).withOpacity(0.1),
                               borderRadius: BorderRadius.circular(12.r),
                             ),
                             child: Text(

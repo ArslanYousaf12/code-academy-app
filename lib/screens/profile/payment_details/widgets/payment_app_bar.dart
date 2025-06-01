@@ -37,11 +37,7 @@ class PaymentAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             );
           },
-          icon: Icon(
-            Icons.add,
-            color: AppColors.primaryElement,
-            size: 24.w,
-          ),
+          icon: Icon(Icons.add, color: AppColors.primaryElement, size: 24.w),
         ),
       ],
     );

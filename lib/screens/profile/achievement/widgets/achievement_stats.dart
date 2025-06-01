@@ -34,11 +34,7 @@ class AchievementStats extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.emoji_events,
-                color: Colors.white,
-                size: 30.w,
-              ),
+              Icon(Icons.emoji_events, color: Colors.white, size: 30.w),
               SizedBox(width: 10.w),
               Text(
                 'Your Progress',
@@ -66,7 +62,11 @@ class AchievementStats extends StatelessWidget {
                 height: 40.h,
                 color: Colors.white.withOpacity(0.3),
               ),
-              _buildStatItem('5', 'Certificates\nEarned', Icons.workspace_premium),
+              _buildStatItem(
+                '5',
+                'Certificates\nEarned',
+                Icons.workspace_premium,
+              ),
             ],
           ),
         ],
@@ -77,11 +77,7 @@ class AchievementStats extends StatelessWidget {
   Widget _buildStatItem(String value, String label, IconData icon) {
     return Column(
       children: [
-        Icon(
-          icon,
-          color: Colors.white,
-          size: 24.w,
-        ),
+        Icon(icon, color: Colors.white, size: 24.w),
         SizedBox(height: 8.h),
         Text(
           value,

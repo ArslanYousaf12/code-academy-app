@@ -88,9 +88,10 @@ class AchievementList extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(15.r),
                   border: Border.all(
-                    color: achievement['isUnlocked']
-                        ? AppColors.primaryElement.withOpacity(0.3)
-                        : AppColors.primaryFourElementText.withOpacity(0.3),
+                    color:
+                        achievement['isUnlocked']
+                            ? AppColors.primaryElement.withOpacity(0.3)
+                            : AppColors.primaryFourElementText.withOpacity(0.3),
                   ),
                   boxShadow: [
                     BoxShadow(
@@ -107,16 +108,20 @@ class AchievementList extends StatelessWidget {
                       width: 60.w,
                       height: 60.h,
                       decoration: BoxDecoration(
-                        color: achievement['isUnlocked']
-                            ? AppColors.primaryElement.withOpacity(0.1)
-                            : AppColors.primaryThreeElementText.withOpacity(0.1),
+                        color:
+                            achievement['isUnlocked']
+                                ? AppColors.primaryElement.withOpacity(0.1)
+                                : AppColors.primaryThreeElementText.withOpacity(
+                                  0.1,
+                                ),
                         borderRadius: BorderRadius.circular(15.r),
                       ),
                       child: Icon(
                         achievement['icon'],
-                        color: achievement['isUnlocked']
-                            ? AppColors.primaryElement
-                            : AppColors.primaryThreeElementText,
+                        color:
+                            achievement['isUnlocked']
+                                ? AppColors.primaryElement
+                                : AppColors.primaryThreeElementText,
                         size: 30.w,
                       ),
                     ),
@@ -132,28 +137,36 @@ class AchievementList extends StatelessWidget {
                                 child: Text(
                                   achievement['title'],
                                   style: TextStyle(
-                                    color: achievement['isUnlocked']
-                                        ? AppColors.primaryText
-                                        : AppColors.primarySecondaryElementText,
+                                    color:
+                                        achievement['isUnlocked']
+                                            ? AppColors.primaryText
+                                            : AppColors
+                                                .primarySecondaryElementText,
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8.w,
+                                  vertical: 4.h,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: achievement['isUnlocked']
-                                      ? Colors.orange.withOpacity(0.1)
-                                      : AppColors.primaryThreeElementText.withOpacity(0.1),
+                                  color:
+                                      achievement['isUnlocked']
+                                          ? Colors.orange.withOpacity(0.1)
+                                          : AppColors.primaryThreeElementText
+                                              .withOpacity(0.1),
                                   borderRadius: BorderRadius.circular(12.r),
                                 ),
                                 child: Text(
                                   '${achievement['points']}pts',
                                   style: TextStyle(
-                                    color: achievement['isUnlocked']
-                                        ? Colors.orange
-                                        : AppColors.primaryThreeElementText,
+                                    color:
+                                        achievement['isUnlocked']
+                                            ? Colors.orange
+                                            : AppColors.primaryThreeElementText,
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -194,12 +207,15 @@ class AchievementList extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       'Progress',
                                       style: TextStyle(
-                                        color: AppColors.primarySecondaryElementText,
+                                        color:
+                                            AppColors
+                                                .primarySecondaryElementText,
                                         fontSize: 12.sp,
                                       ),
                                     ),
@@ -215,9 +231,15 @@ class AchievementList extends StatelessWidget {
                                 ),
                                 SizedBox(height: 5.h),
                                 LinearProgressIndicator(
-                                  value: achievement['progress'] / achievement['total'],
-                                  backgroundColor: AppColors.primaryFourElementText.withOpacity(0.3),
-                                  valueColor: AlwaysStoppedAnimation<Color>(AppColors.primaryElement),
+                                  value:
+                                      achievement['progress'] /
+                                      achievement['total'],
+                                  backgroundColor: AppColors
+                                      .primaryFourElementText
+                                      .withOpacity(0.3),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    AppColors.primaryElement,
+                                  ),
                                 ),
                               ],
                             ),

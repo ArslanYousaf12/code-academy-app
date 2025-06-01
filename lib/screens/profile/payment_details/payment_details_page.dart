@@ -58,10 +58,7 @@ class _PaymentDetailsPageState extends State<PaymentDetailsPage>
             Expanded(
               child: TabBarView(
                 controller: _tabController,
-                children: [
-                  PaymentMethods(),
-                  TransactionHistory(),
-                ],
+                children: [PaymentMethods(), TransactionHistory()],
               ),
             ),
           ],
