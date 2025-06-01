@@ -29,7 +29,14 @@ class AchievementAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Share achievements feature coming soon!'),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
           icon: Icon(
             Icons.share,
             color: AppColors.primaryElement,

@@ -29,7 +29,14 @@ class RemindersAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Add reminder feature coming soon!'),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
           icon: Icon(Icons.add, color: AppColors.primaryElement, size: 24.w),
         ),
       ],

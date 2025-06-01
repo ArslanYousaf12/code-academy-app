@@ -21,7 +21,14 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Video call feature coming soon!'),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
           icon: Icon(
             Icons.videocam_outlined,
             color: AppColors.primaryText,
@@ -29,7 +36,14 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Create new chat feature coming soon!'),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
           icon: Icon(
             Icons.edit_outlined,
             color: AppColors.primaryText,

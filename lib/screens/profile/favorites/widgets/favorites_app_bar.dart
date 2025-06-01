@@ -29,7 +29,14 @@ class FavoritesAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Search favorites feature coming soon!'),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
           icon: Icon(
             Icons.search,
             color: AppColors.primaryText,

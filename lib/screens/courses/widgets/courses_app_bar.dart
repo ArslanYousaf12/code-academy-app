@@ -21,7 +21,14 @@ class CoursesAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('No new notifications'),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
           icon: Icon(
             Icons.notifications_outlined,
             color: AppColors.primaryText,
