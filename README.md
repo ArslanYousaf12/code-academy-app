@@ -100,7 +100,7 @@ A modern and intuitive Flutter-based learning management system (LMS) designed t
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/code_academy_app.git
+   git clone https://github.com/arslanyousaf12/code_academy_app.git
    cd code_academy_app
    ```
 
@@ -319,6 +319,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by [Your Name]**
+**Made with ❤️ by Arslan **
 
 *A comprehensive learning management system built with Flutter*
