@@ -1,13 +1,16 @@
 import 'package:code_academy_app/screens/home/home_page.dart';
 import 'package:code_academy_app/screens/profile/profile.dart';
+import 'package:code_academy_app/screens/search/search_page.dart';
+import 'package:code_academy_app/screens/courses/courses_page.dart';
+import 'package:code_academy_app/screens/chat/chat_page.dart';
 import 'package:flutter/material.dart';
 
 Widget buildPage(int index) {
   List<Widget> widgets = [
     const HomePage(),
-    Center(child: Text("Search")),
-    Center(child: Text("Courses")),
-    Center(child: Text("Chat")),
+    const SearchPage(),
+    const CoursesPage(),
+    const ChatPage(),
     ProfileScreen(),
   ];
   return widgets[index];
