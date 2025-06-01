@@ -8,4 +8,8 @@ class AppRoutes {
   static const String Home_PAGE = '/home_page';
 
   static const String PROFILE_SETTINGS = '/settings';
+  static const String PAYMENT_DETAILS = '/payment_details';
+  static const String ACHIEVEMENT = '/achievement';
+  static const String FAVORITES = '/favorites';
+  static const String REMINDERS = '/reminders';
 }

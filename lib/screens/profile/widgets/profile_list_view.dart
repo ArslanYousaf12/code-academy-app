@@ -23,14 +23,26 @@ class ProfileListView extends StatelessWidget {
           return GestureDetector(
             onTap: () {
               // Navigate based on the specific item
-              if (itemKey.toLowerCase() == "settings") {
-                Navigator.of(context).pushNamed(AppRoutes.PROFILE_SETTINGS);
-              } else {
-                // For other items, you can add their routes here
-                // or show a message that the feature is coming soon
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('$itemKey feature coming soon!')),
-                );
+              switch (itemKey.toLowerCase()) {
+                case "settings":
+                  Navigator.of(context).pushNamed(AppRoutes.PROFILE_SETTINGS);
+                  break;
+                case "payment details":
+                  Navigator.of(context).pushNamed(AppRoutes.PAYMENT_DETAILS);
+                  break;
+                case "achievement":
+                  Navigator.of(context).pushNamed(AppRoutes.ACHIEVEMENT);
+                  break;
+                case "love":
+                  Navigator.of(context).pushNamed(AppRoutes.FAVORITES);
+                  break;
+                case "reminders":
+                  Navigator.of(context).pushNamed(AppRoutes.REMINDERS);
+                  break;
+                default:
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('$itemKey feature coming soon!')),
+                  );
               }
             },
             child: Container(

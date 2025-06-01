@@ -7,6 +7,10 @@ import 'package:code_academy_app/screens/home/bloc/home_page_bloc.dart';
 import 'package:code_academy_app/screens/home/home_page.dart';
 import 'package:code_academy_app/screens/profile/settings/bloc/setting_bloc.dart';
 import 'package:code_academy_app/screens/profile/settings/settings_page.dart';
+import 'package:code_academy_app/screens/profile/payment_details/payment_details_page.dart';
+import 'package:code_academy_app/screens/profile/achievement/achievement_page.dart';
+import 'package:code_academy_app/screens/profile/favorites/favorites_page.dart';
+import 'package:code_academy_app/screens/profile/reminders/reminders_page.dart';
 import 'package:code_academy_app/screens/register/bloc/register_bloc.dart';
 import 'package:code_academy_app/screens/register/register.dart';
 import 'package:code_academy_app/screens/sigin_in/bloc/sigin_in_bloc.dart';
@@ -49,9 +53,29 @@ class AppPages {
       page: const SettingsPage(),
       bloc: BlocProvider(create: (_) => SettingBloc()),
     ),
+    PageEntity(
+      route: AppRoutes.PAYMENT_DETAILS,
+      page: const PaymentDetailsPage(),
+    ),
+    PageEntity(
+      route: AppRoutes.ACHIEVEMENT,
+      page: const AchievementPage(),
+    ),
+    PageEntity(
+      route: AppRoutes.FAVORITES,
+      page: const FavoritesPage(),
+    ),
+    PageEntity(
+      route: AppRoutes.REMINDERS,
+      page: const RemindersPage(),
+    ),
   ];
-  static List<dynamic> getAllBlocs(BuildContext context) {
-    return pages().map((page) => page.bloc).toList();
+  static List<BlocProvider> getAllBlocs(BuildContext context) {
+    return pages()
+        .map((page) => page.bloc)
+        .where((bloc) => bloc != null)
+        .cast<BlocProvider>()
+        .toList();
   }
 
   static MaterialPageRoute generateRoute(RouteSettings settings) {
