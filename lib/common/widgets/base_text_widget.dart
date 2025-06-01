@@ -2,8 +2,8 @@ import 'package:code_academy_app/common/values/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ReusableSubTitleText extends StatelessWidget {
-  const ReusableSubTitleText({
+class BaseTextWidget extends StatelessWidget {
+  const BaseTextWidget({
     super.key,
     required this.text,
     this.color = AppColors.primaryText,

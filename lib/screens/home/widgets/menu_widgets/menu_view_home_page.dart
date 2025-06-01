@@ -1,6 +1,6 @@
 import 'package:code_academy_app/common/values/colors.dart';
 import 'package:code_academy_app/screens/home/widgets/menu_widgets/reusable_menu_text.dart';
-import 'package:code_academy_app/screens/home/widgets/menu_widgets/reusable_sub_title_text.dart';
+import 'package:code_academy_app/common/widgets/base_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,9 +17,9 @@ class MenuViewHomePage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ReusableSubTitleText(text: "Choose your course"),
+              BaseTextWidget(text: "Choose your course"),
               GestureDetector(
-                child: ReusableSubTitleText(
+                child: BaseTextWidget(
                   text: "See all",
                   color: AppColors.primaryThreeElementText,
                   fontSize: 10,

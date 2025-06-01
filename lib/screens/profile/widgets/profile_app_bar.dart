@@ -1,4 +1,5 @@
 import 'package:code_academy_app/common/values/colors.dart';
+import 'package:code_academy_app/common/widgets/base_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,14 +18,7 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
               height: 12.h,
               child: Image.asset("assets/icons/menu.png"),
             ),
-            Text(
-              "Profile",
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.primaryText,
-              ),
-            ),
+            BaseTextWidget(text: "Profile"),
             SizedBox(
               width: 24.w,
               height: 24.h,

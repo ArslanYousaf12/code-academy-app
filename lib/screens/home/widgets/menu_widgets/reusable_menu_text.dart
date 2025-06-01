@@ -1,5 +1,5 @@
 import 'package:code_academy_app/common/values/colors.dart';
-import 'package:code_academy_app/screens/home/widgets/menu_widgets/reusable_sub_title_text.dart';
+import 'package:code_academy_app/common/widgets/base_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +24,7 @@ class ReusableMenuText extends StatelessWidget {
         borderRadius: BorderRadius.circular(7.r),
         border: Border.all(color: backgroundColor, width: 1.w),
       ),
-      child: ReusableSubTitleText(
+      child: BaseTextWidget(
         text: text,
         color: textColor,
         fontSize: 12,
