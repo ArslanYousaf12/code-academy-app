@@ -66,7 +66,7 @@ A modern and intuitive Flutter-based learning management system (LMS) designed t
 - **Responsive Design**: flutter_screenutil for adaptive layouts
 - **Backend**: Firebase (Authentication, Firestore, Cloud Storage)
 - **Local Storage**: SharedPreferences
-- **Notifications**: Local notifications support
+- **Notifications**: Local notifications 
 
 ## 📱 Screenshots
 
@@ -285,12 +285,12 @@ flutter build ios --release
 
 ## 📋 TODO / Roadmap
 
-- [ ] **Video Player Integration**: Add video lessons support
+- [ ] **Video Player Integration**: Add video lessons 
 - [ ] **Offline Mode**: Download courses for offline viewing
 - [ ] **Push Notifications**: Real-time notifications
 - [ ] **Social Features**: Student discussion forums
 - [ ] **Advanced Analytics**: Learning progress analytics
-- [ ] **Multi-language Support**: Internationalization
+- [ ] **Multi-language **: Internationalization
 - [ ] **Dark Mode**: Theme switching capability
 - [ ] **Accessibility**: Enhanced accessibility features
 
@@ -303,7 +303,7 @@ flutter build ios --release
 ## 📞 Support
 
 For support and questions:
-- Email: support@codeacademyapp.com
+
 - GitHub Issues: [Create an issue](https://github.com/yourusername/code_academy_app/issues)
 
 ## 📄 License
